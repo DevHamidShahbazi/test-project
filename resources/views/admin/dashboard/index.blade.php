@@ -6,12 +6,12 @@
 
         <div class="card">
             <p class="text-center">لیست محصولات</p>
-            <b class="text-center">method:GET   http://fanoram.ir/products</b>
+            <b class="text-center">method:GET   /products</b>
         </div>
 
         <div class="card">
             <p class="text-center">ثبت سفارش (برای دسترسی باید ثبت نام کنید)</p>
-            <b class="text-center">method:POST   http://fanoram.ir/store-order</b>
+            <b class="text-center">method:POST   /store-order</b>
         </div>
 
     </div>
