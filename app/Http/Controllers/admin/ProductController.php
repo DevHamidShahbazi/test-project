@@ -42,12 +42,4 @@ class ProductController extends Controller
         return redirect(route('admin.product.index'))->with('success', 'ویرایش شد');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        dd('test');
-        return redirect(route('admin.product.index'))->with('success', 'تغیرات اعمال شد');
-    }
 }

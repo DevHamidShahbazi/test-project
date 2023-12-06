@@ -43,6 +43,7 @@ class ProductRequest extends FormRequest
 
         return [];
     }
+
     public function toDTO() :ProductModelDTO
     {
         return  ProductModelDTO::fromRequest($this);

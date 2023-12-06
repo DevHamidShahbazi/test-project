@@ -34,6 +34,15 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route('admin.order.index') }}" class="nav-link @section('orders') @show">
+                            <i class="fa fa-list"></i>
+                            <p>
+                                مدیریت سفارشات
+                            </p>
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

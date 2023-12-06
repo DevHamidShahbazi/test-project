@@ -1,6 +1,6 @@
 @extends('layouts.layout admin.index')
 
-@section('Header',' لیست دسته بندی ها')
+@section('header',' لیست محصولات')
 @section('products','active')
 @section('content')
     @include('components.toastr-alert.error')
@@ -27,7 +27,6 @@
                             <th  class="text-center text-light" scope="col" >قیمت</th>
                             <th  class="text-center text-light" scope="col" >تصویر</th>
                             <th  class="text-center text-light" scope="col" >ویرایش</th>
-                            <th  class="text-center text-light" scope="col" >حذف</th>
                         </tr>
 
                         @if(!empty($products))
@@ -37,25 +36,21 @@
                                     <td  class="py-3 px-0 text-center font-weight-bold" >{{$product->name}}</td>
                                     <td  class="py-3 px-0 text-center font-weight-bold" >{{$product->price}}</td>
                                     <td  class="p-0 text-center" >
-                                        <i><img width="100" class="img-thumbnail" src="{{ $product->image }}" alt="{{ $product->alt }}"></i>
+                                        <i><img width="100" class="img-thumbnail" src="{{ $product->image }}"></i>
                                     </td>
                                     <td class="py-3 px-0 text-center font-weight-bold">
                                         <button data-toggle="modal" data-target="#EditList{{$key}}" type="button" style="width: max-content;" class="btn btn-info btn-sm"><i class="fa fa-edit"></i><i style="margin: inherit;">ویرایش</i></button>
                                     </td>
                                     @include('admin.product.edit')
-                                    <td  class="py-3 px-0 text-center  text-light ">
-                                        <form id="delete-form" action="{{ route('admin.product.destroy',$product->id) }}" method="POST" enctype="multipart/form-data">
-                                            {{ method_field('PATCH') }}
-                                            @csrf
-                                            <button  type="submit" style="width: max-content;" class="btn btn-sm btn-danger" ><i class="fa fa-trash ml-1"></i><i class="m-0">حذف</i></button>
-                                        </form>
-                                    </td>
                                 </tr>
                             @endforeach
                         @endif
                     </table>
                 </div>
                 <!-- /.card-body -->
+            </div>
+            <div class="pager default text-center">
+                {{$products->links("pagination::bootstrap-4")}}
             </div>
             <!-- /.card -->
         </div>

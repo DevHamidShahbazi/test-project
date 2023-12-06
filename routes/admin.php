@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',DashboardController::class)->name('dashboard');
 
 Route::resource('product',ProductController::class)->except(['create','show','edit']);
-
+Route::resource('order', OrderController::class)->except(['create','edit','store','destroy','update']);

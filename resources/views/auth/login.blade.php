@@ -15,9 +15,7 @@
                 <p class="login-box-msg">فرم زیر را تکمیل کنید و دکمه ورود را بزنید</p>
 
                 <form method="POST" action="{{ route('login') }}">
-
-                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
+                    @csrf
                     <div class="input-group mb-3">
                         <input
                             name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus
@@ -38,7 +36,7 @@
                                     من را به یاد داشته باش
                                 </label>
                             </div>
-
+                            <a href="{{ route('register') }}" class="text-center text-primary">هنوز ثبت نام نکرده ام!!</a>
                         </div>
                     </div>
                     <br>

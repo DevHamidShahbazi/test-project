@@ -12,10 +12,14 @@
         <link href="./admin/css/bootstrap-rtl.min.css" rel="stylesheet">
         <link href="./admin/css/custom-style.css" rel="stylesheet">
     </head>
-    <body class="d-flex justify-content-center align-items-center" style="background-color: #213854;height: 100vh" >
+    <body >
+    @include('components.toastr-alert.error')
+    @include('components.toastr-alert.success')
+    @include('components.errors.index')
     @yield('content')
     <script type="text/javascript" src="./admin/js/jquery.min.js"></script>
     <script type="text/javascript" src="./admin/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./admin/js/toastr.js"></script>
+    @yield('script')
     </body>
 </html>

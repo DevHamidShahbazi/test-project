@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\public\OrderController;
+use App\Http\Controllers\public\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('public.welcome');
 })->name('public.home');
+
+Route::get('/products', [ProductController::class,'index'])->name('public.products');
+Route::post('/store-order', [OrderController::class,'storeOrder'])->name('public.store.order');
 
 Auth::routes();
