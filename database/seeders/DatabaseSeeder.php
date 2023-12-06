@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +16,9 @@ class DatabaseSeeder extends Seeder
     {
          User::factory([
              'phone'=>'09121234567',
+             'level'=>'admin',
          ])->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         Product::factory(5)->create();
     }
 }
