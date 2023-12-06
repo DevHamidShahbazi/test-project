@@ -6,7 +6,7 @@ $(document).ready(function () {
         }
     });
 
-    /*sweet alert Delete*/
+    /*sweet toastr-alert Delete*/
     $('.btnDelete').on('click', function () {
         var id = $(this).data('id');
         var route = $(this).data('route');
@@ -43,6 +43,6 @@ $(document).ready(function () {
             }
         });
     });
-    /*sweet alert Delete*/
+    /*sweet toastr-alert Delete*/
 });
 
